@@ -6,7 +6,7 @@ const logTime = () =>
     `${minutes >= 10 ? minutes : "0" + minutes}:${seconds >= 10 ? seconds : "0" + seconds}`,
   );
 
-const logOutTimer = setInterval(() => {
+const countdownTimer = setInterval(() => {
   if (minutes !== 0) {
     seconds--;
     if (seconds < 0) {
@@ -14,7 +14,7 @@ const logOutTimer = setInterval(() => {
       seconds = 59;
       if (minutes === 0) {
         console.log(`Last countdown`);
-        clearInterval(logOutTimer);
+        clearInterval(countdownTimer);
         setInterval(() => {
           if (seconds > 0) {
             seconds--;
